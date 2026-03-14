@@ -72,7 +72,7 @@ export const Users: CollectionConfig = {
       admin: {
         placeholder: 'https://linkedin.com/in/your-profile',
       },
-      validate: (value) =>
+      validate: (value: string | null | undefined) =>
         !value || /^https:\/\/(www\.)?linkedin\.com\/in\/[a-zA-Z0-9-]+$/.test(value)
           ? true
           : 'Please enter a valid LinkedIn URL.',
@@ -83,7 +83,7 @@ export const Users: CollectionConfig = {
       admin: {
         placeholder: 'https://twitter.com/your-profile',
       },
-      validate: (value) =>
+      validate: (value: string | null | undefined) =>
         !value || /^https:\/\/(www\.)?twitter\.com\/[a-zA-Z0-9_]+$/.test(value)
           ? true
           : 'Please enter a valid Twitter URL.',

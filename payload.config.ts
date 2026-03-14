@@ -6,7 +6,6 @@ import { mongooseAdapter } from '@payloadcms/db-mongodb'
 import { buildConfig, GlobalConfig } from 'payload'
 import { v4 as uuidv4 } from 'uuid';
 
-import sharp from 'sharp'
 import { fileURLToPath } from 'url'
 import { Institute } from '@/app/collections/Institute'
 import { Users } from '@/app/collections/Users'
@@ -144,8 +143,7 @@ export default buildConfig({
       enabled: true, // Optional, defaults to true
       // Specify which collections should use Vercel Blob
       collections: {
-        media: true,
-        'media-with-prefix': {
+        media: {
           prefix: 'my-prefix',
         },
       },
@@ -207,6 +205,5 @@ export default buildConfig({
       })
     }
   },
-  sharp,
   // endpoints: [forceLoginEndpoint],
 })
